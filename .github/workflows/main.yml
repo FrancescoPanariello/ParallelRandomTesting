@@ -64,7 +64,7 @@ jobs:
             echo classes
             dir /home/runner/work/ParallelRandomTesting/ParallelRandomTesting/coverage_$timestamp/classes
             
-            java -noverify -classpath /home/runner/work/ParallelRandomTesting/ParallelRandomTesting/coverage_$timestamp/classes/${{ env.name_file }}.class:/home/runner/work/ParallelRandomTesting/ParallelRandomTesting/emma-2.0.5312/lib/emma.jar:/home/runner/work/ParallelRandomTesting/ParallelRandomTesting/randoop-all-3.0.6.jar randoop.main.Main gentests --testclass=${{ env.name_file }} --timelimit=${{ env.time_limit }} --randomseed=${{ env.randseed }} --no-regression-tests=true --junit-output-dir=/home/runner/work/ParallelRandomTesting/ParallelRandomTesting/coverage_$timestamp
+            java -noverify -classpath /home/runner/work/ParallelRandomTesting/ParallelRandomTesting/coverage_$timestamp/classes:/home/runner/work/ParallelRandomTesting/ParallelRandomTesting/emma-2.0.5312/lib/emma.jar:/home/runner/work/ParallelRandomTesting/ParallelRandomTesting/randoop-all-3.0.6.jar randoop.main.Main gentests --testclass=${{ env.name_file }} --timelimit=${{ env.time_limit }} --randomseed=${{ env.randseed }} --no-regression-tests=true --junit-output-dir=/home/runner/work/ParallelRandomTesting/ParallelRandomTesting/coverage_$timestamp
             
             cp coverage.ec /home/runner/work/ParallelRandomTesting/ParallelRandomTesting/coverage_$timestamp/coverage_$timestamp.ec
             rm coverage.ec
